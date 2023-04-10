@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<style>
+	body {
+  		height: 100vh;
+  		margin: 0;
+  		padding: 1rem;
+  		display: grid;
+  		place-items: center;
+  		font-family: system-ui;
+  		color: white;
+	}
+	
+    h1 {
+  		background: rgba(0,0,0,0.4);
+  		padding: 1rem 1rem;
+        border-radius: 30px;
+  		text-align: center;
+	}
+    
+	span {
+  		display: block;
+  		padding: 0.5rem;
+  		font-size: 1rem;
+  		font-family: monospace; 
+        opacity: 0.4;
+    }
+
+	button {
+		color: white;
+    	background-color: black;
+        opacity: 0.4;
+	}
+    
+    button:hover {
+    	opacity: 1;
+        transition: 0.4s ease;
+    }
+    
+    span:hover {
+    	opacity: 1;
+        transition: 0.4s ease;
+    }
+</style>
+<body>
+<h1>
+  <button id="genNew">Generate New Random Color</button>
+  <span id="color"></span>
+</h1>
+<script>
+const setbg = () => {
+  const randomColor = Math.floor(Math.random()*16777215).toString(16);
+  document.body.style.backgroundColor = "#" + randomColor;
+  color.innerHTML = "#" + randomColor;
+}
+
+genNew.addEventListener("click", setbg);
+setBg();
+</script>
+</body>
+</html>
